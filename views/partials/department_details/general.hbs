@@ -53,6 +53,33 @@
 
 
   <div class="form-group">
+    <label class="control-label">Users who have {{department.name}} as secondary department</label>
+    <ul class="list-group no-bottom-space">
+      {{# each department.secondary_users }}
+      <li class="list-group-item">
+        <span><a href='/users/edit/{{ this.id }}/'>{{ this.full_name }}</a> <button type="submit" name="remove_secondary_user_id" value="{{this.id}}" class="pull-right btn btn-link btn-xs"><i class="fa fa-trash"></i> Remove</button><span>
+      </li>
+      {{/ each }}
+
+      <li class="list-group-item">
+        <span>&nbsp;
+        <a class="pull-right btn btn-link btn-xs"
+          data-vpp-add-new-secondary-user="1"
+          data-toggle="modal"
+          data-target="#add_secondary_users_modal"
+          data-department_id="{{department.id}}"
+          data-department_name="{{department.name}}"
+        >
+          <i class="fa fa-plus"></i> Add new user
+        </a>
+        <span>
+      </li>
+    </ul>
+    <span class="help-block">List of users who belong to {{department.name}} department's employees.</span>
+  </div>
+
+
+  <div class="form-group">
     <label for="allowance_select">Allowance</label>
 
     <select class="form-control" name="allowance" id="allowance_select">
@@ -89,3 +116,4 @@
 </form>
 
 {{> department_details/supervisers_modal department=department }}
+{{> department_details/secondary_users_modal department=department }}
