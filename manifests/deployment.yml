@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: zeromakapplication 
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: zeromakapplication 
+    spec:
+      containers:
+        - name: zeromakapplication 
+          image: timeoffregistry.azurecr.io/zeromakapplication 
+          ports:
+          - containerPort: 3000
