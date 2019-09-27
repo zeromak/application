@@ -124,7 +124,7 @@ npm start
 
 ## Continuous delivery
 
-![TimeOff.CD](https://1drv.ms/u/s!Agf6dzClgciEgZN5bsrdTcwYnAsQqw?e=GCanUd)
+![TimeOff.CD](https://github.com/zeromak/application/raw/master/public/img/TimeoffDevOps.png)
 
 This fork has continuous delivery integrated with Azure Devops Pipelines. Whenever a change to the master branch is detected the following steps deploy the service automatically:
 
