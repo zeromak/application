@@ -122,6 +122,19 @@ npm run-script db-update
 npm start
 ```
 
+## Continuous delivery
+
+![TimeOff.CD](https://1drv.ms/u/s!Agf6dzClgciEgZN5bsrdTcwYnAsQqw?e=GCanUd)
+
+This fork has continuous delivery integrated with Azure Devops Pipelines. Whenever a change to the master branch is detected the following steps deploy the service automatically:
+
+1. Dockerfile build.
+2. Push docker image to Container Registry. (In order to keep versioning of generated Docker images)
+3. Pull docker image from Container Registry. (For deploying)
+4. Deploy to Kubernetes cluster.
+
+The application gets published at http://52.170.97.35:3000
+
 ## Feedback
 
 Please report any issues or feedback to <a href="https://twitter.com/FreeTimeOffApp">twitter</a> or Email: pavlo at timeoff.management
